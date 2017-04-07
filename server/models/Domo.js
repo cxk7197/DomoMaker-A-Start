@@ -8,7 +8,7 @@ const _ = require('underscore');
 let DomoModel = {};
 
 const convertId = mongoose.Types.ObjectId;
-const setName = (name) => _.escape(name).trim();
+const setName = name => _.escape(name).trim();
 
 const DomoSchema = new mongoose.Schema({
   name: {

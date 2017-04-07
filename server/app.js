@@ -25,15 +25,15 @@ mongoose.connect(dbURL, (err) => {
 });
 
 let redisURL = {
-    hostname: 'localhost',
-    port: 6379,
+  hostname: 'localhost',
+  port: 6379,
 };
 
 let redisPASS;
 
 if (process.env.REDISCLOUD_URL) {
-    redisURL = url.parse(process.env.REDISCLOUD_URL);
-    redisPASS = redisURL.auth.split(':')[1];
+  redisURL = url.parse(process.env.REDISCLOUD_URL);
+  redisPASS = redisURL.auth.split(':')[1];
 }
 
 // pull in our routes
@@ -47,18 +47,18 @@ app.use(bodyParser.urlencoded({
   extended: true,
 }));
 app.use(session({
-    key: 'sessionid',
-    store: new RedisStore({
-       host: redisURL.hostname,
-       port: redisURL.port,
-       pass: redisPASS,     
-    }),
-    secret: 'Domo Arigato',
-    resave: true,
-    saveUninitialized: true,
-    cookie: {
-        httpOnly: true,
-    },
+  key: 'sessionid',
+  store: new RedisStore({
+    host: redisURL.hostname,
+    port: redisURL.port,
+    pass: redisPASS,
+  }),
+  secret: 'Domo Arigato',
+  resave: true,
+  saveUninitialized: true,
+  cookie: {
+    httpOnly: true,
+  },
 }));
 app.engine('handlebars', expressHandlebars({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
@@ -66,14 +66,14 @@ app.set('views', `${__dirname}/../views`);
 app.disable('x-powered-by');
 app.use(cookieParser());
 
-//AFTER COOKIE PARSER NEVER4GET
+// AFTER COOKIE PARSER NEVER4GET
 
 app.use(csrf());
 app.use((err, req, res, next) => {
-    if (err.code !== 'EBADCSRFTOKEN') return next(err);
-    
-    console.log('Missing CSRF token');
-    return false;
+  if (err.code !== 'EBADCSRFTOKEN') return next(err);
+
+  console.log('Missing CSRF token');
+  return false;
 });
 
 router(app);
