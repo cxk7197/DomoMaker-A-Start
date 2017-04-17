@@ -14,13 +14,14 @@ const makerPage = (req, res) => {
 };
 
 const makeDomo = (req, res) => {
-  if (!req.body.name || !req.body.age) {
+  if (!req.body.name || !req.body.age || !req.body.height) {
     return res.status(400).json({ error: 'RAWR! All fields are required' });
   }
 
   const domoData = {
     name: req.body.name,
     age: req.body.age,
+    height: req.body.height,
     owner: req.session.account._id,
   };
 
@@ -56,6 +57,20 @@ const getDomos = (request, response) => {
   });
 }
 
+//const getMoreDomo = (request, response) =>  {
+//  Domo.DomoModel.findById(req.params.domoid, (err, docs) => {
+//    if (err) {
+//      console.log(err);
+//      return res.status(400).json({ error: 'An error occured' });
+//    }
+//
+//    return res.json({ domos: docs });
+//  });
+//    
+//}
+
+
 module.exports.makerPage = makerPage;
 module.exports.getDomos = getDomos;
 module.exports.make = makeDomo;
+//module.exports.getMoreDomo = getMoreDomo;
