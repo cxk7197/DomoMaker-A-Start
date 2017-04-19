@@ -55,22 +55,22 @@ const getDomos = (request, response) => {
 
     return res.json({ domos: docs });
   });
-}
+};
 
-//const getMoreDomo = (request, response) =>  {
-//  Domo.DomoModel.findById(req.params.domoid, (err, docs) => {
-//    if (err) {
-//      console.log(err);
-//      return res.status(400).json({ error: 'An error occured' });
-//    }
-//
-//    return res.json({ domos: docs });
-//  });
-//    
-//}
+ const getMoreDomo = (request, response) =>  {
+  Domo.DomoModel.findById(request.params.domoid, (err, docs) => {
+    if (err) {
+      console.log(err);
+      return response.status(400).json({ error: 'An error occured' });
+    }
+
+    return response.render('seemore', { csrfToken: request.csrfToken(), domo: docs });
+  });
+
+ }
 
 
 module.exports.makerPage = makerPage;
 module.exports.getDomos = getDomos;
 module.exports.make = makeDomo;
-//module.exports.getMoreDomo = getMoreDomo;
+module.exports.getMoreDomo = getMoreDomo;

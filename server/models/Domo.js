@@ -23,7 +23,7 @@ const DomoSchema = new mongoose.Schema({
     min: 0,
     requierd: true,
   },
-    
+
   height: {
     type: Number,
     min: 0,
@@ -51,13 +51,13 @@ DomoSchema.statics.findByOwner = (ownerId, callback) => {
 };
 
 
-//DomoSchema.statics.findById = (uniqueId, callback) => {
-//  const search = {
-//    _id: domoId,
-//  };
-//
-//  return DomoModel.findSingle(search, callback);
-//};
+ DomoSchema.statics.findById = (domoid, callback) => {
+  const search = {
+    _id: domoid,
+  };
+
+  return DomoModel.findOne(search, callback);
+ };
 
 DomoModel = mongoose.model('Domo', DomoSchema);
 
