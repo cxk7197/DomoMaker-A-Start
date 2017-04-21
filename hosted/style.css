@@ -16,7 +16,7 @@ a {
     width: 40;
     padding-top: 5px;
     float:left;
-    border-radius: 8px;
+  
 }
 
 nav {
@@ -42,7 +42,7 @@ nav:nth-child(1) {
     color: white;
     text-decoration: none;
     padding: 5px;
-    border-radius: 4px;
+  
     background-color: #55acee;
     transition: background-color 0.4s ease;
 }
@@ -55,7 +55,6 @@ nav:nth-child(1) {
 .domoForm {
     border: 2px solid #338acc;
     height: 35px;
-    width: 900px;
     margin-top:0px;
     padding-top:10px;
     background-color: #55acee;
@@ -81,7 +80,7 @@ nav:nth-child(1) {
     display: inline;
     width: 90px;
     background-color: #55acee;
-    border-radius: 2px;
+
     color: white;
     text-decoration: none;
 }
@@ -124,7 +123,7 @@ nav:nth-child(1) {
     font-size: 1.2em;
     width: 100px;
     background-color: #55acee;
-    border-radius: 2px;
+    
     border-color: #66acee;
     padding: 3px 0px;
     color: white;
@@ -144,7 +143,7 @@ nav:nth-child(1) {
     text-align: center;
     font-size: 1.1em;
     width: 180px;
-    border-radius: 6px;
+
 }
 
 #user:focus, #pass:focus, #pass2:focus {
@@ -183,33 +182,15 @@ nav:nth-child(1) {
     font-style: italic;
 }
 
-#domo {
-    z-index: 225;
-    margin-top: -20px;
-    margin-left: 135px;
-    height: 450px;
-    width: 300px;
-    -ms-transform: rotate(330deg);
-    -webkit-transform: rotate(330deg); 
-    transform: rotate(330deg);
-}
-
-#domos {
-    width: 40%;
-    min-width: 400px;
-    border: 2px solid #55acee;
-    border-radius: 4px;
-    margin: 0 auto;
-    margin-top: 100px;
-}
-
 .domo {
-    width: 95%;
+    width: 20%;'
+    display: block;
+    float: left;
     margin: 0 auto;
     margin-top: 2px;
     margin-bottom: 2px;
     border: 2px solid #55acee;
-    border-radius: 4px;
+  
     background-color: #55acee;
     padding: 10px;
     min-height:60px;
@@ -228,7 +209,7 @@ img.domoFace {
     margin-right: 10px;
     height: 50px;
     width: 50px;
-    border-radius: 4px;
+   
     margin-top:10px;
     float:left;
 }
@@ -258,10 +239,11 @@ h3.domoAge {
     font-size: 1.5em;
 }
 
+/*
 .domo:first-child {
     margin-top: 10px;
 }
 
 .domo:last-child {
     margin-bottom:10px;
-}
+}*/

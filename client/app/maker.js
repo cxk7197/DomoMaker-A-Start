@@ -58,7 +58,7 @@ const renderDomoList = function() {
         <h3 className="domoName"> Name: {domo.name} </h3>
         <h3 className="domoAge"> Age: {domo.age} </h3>
         <h3 className="domoHeight"> Height: {domo.height} </h3>
-        <a href={'/edit/' + domo._id}>SEE MORE</a>
+        <a href={'/seeMore/' + domo._id}>SEE MORE</a>
         <p>hi</p>
       </div>
     );

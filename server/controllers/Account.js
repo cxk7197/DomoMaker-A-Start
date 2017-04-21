@@ -79,6 +79,28 @@ const signup = (request, response) => {
   });
 };
 
+
+//const updatePassword = (req, res) => {
+//  const username = `${req.body.username}`;
+//  const password = `${req.body.currentPass}`;
+//
+//
+//  return Account.AccountModel.authenticate(username, password, (err, account) => {
+//    if (err || !account) {
+//      return res.status(401).json({ error: 'Wrong username and/or password' });
+//    }
+//
+//    const passUpdated = account;
+//
+//    return Account.AccountModel.generateHash(req.body.newPass, (salt, hash) => {
+//        passUpdated.password = hash;
+//        passUpdated.salt = salt;
+//
+//        const savePromise = passUpdated.save();
+//    });
+//  });
+//}
+
 const getToken = (request, response) => {
   const req = request;
   const res = response;

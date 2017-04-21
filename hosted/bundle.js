@@ -97,7 +97,7 @@ var renderDomoList = function renderDomoList() {
       ),
       React.createElement(
         "a",
-        { href: '/edit/' + domo._id },
+        { href: '/seeMore/' + domo._id },
         "SEE MORE"
       ),
       React.createElement(
