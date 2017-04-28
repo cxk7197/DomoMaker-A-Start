@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>DomoMaker</title>
+  <title>Home Recipe</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-dom.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
@@ -10,15 +10,21 @@
   <link rel="shortcut icon" href="/assets/img/favicon.png"/>
   <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
 </head>
-<body> 
-  <nav><a href="/login"><img id="logo" src="/assets/img/face.png" alt="face logo"/></a>
-    <div class="navlink"><a id="loginButton" href="/login">Login</a></div>
-    <div class="navlink"><a id="signupButton" href="/signup">Sign up</a></div>
+<body id="login"> 
+  <nav>
+      <a href="/login"><img id="logo" src="/assets/img/hr-01.png" alt="HRLogo"/></a>
+       <div class="navlink">
+          <a class="nav-left" id="loginButton" href="/login">LOGIN</a>
+          <a class="nav-right" style="float:left;"  id="signupButton" href="/signup">SIGN UP</a>
+      </div>
   </nav>
-  <section id="content"></section>
-  <div id="domoMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
-    <h3><span id="errorMessage">Wrong username or password</span></h3><img id="domo" src="assets/img/domo.png" alt="domo"/>
+  
+  <section id="content" class="login"></section>
+
+  <div id="recipeMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
+    <h3><span id="errorMessage">Wrong username or password</span></h3><img id="recipe" src="assets/img/recipe.png" alt="recipe"/>
   </div>
+ 
   <script src="/assets/loginBundle.js"></script>
 </body>
 </html>

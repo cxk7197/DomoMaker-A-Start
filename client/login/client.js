@@ -1,7 +1,7 @@
 const handleLogin = (e) => {
   e.preventDefault();
 
-  $("#domoMessage").animate({width:'hide'}, 350);
+  $("#recipeMessage").animate({width:'hide'}, 350);
 
   if($("#user").val() == '' || $("#pass").val() == '') {
     handleError("RAWR! Username or password is empty");
@@ -18,7 +18,7 @@ const handleLogin = (e) => {
 const handleSignup = (e) => {
   e.preventDefault();
 
-  $("#domoMessage").animate({width:'hide'}, 350);
+  $("#recipeMessage").animate({width:'hide'}, 350);
 
   if($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '') {
     handleError("RAWR! All fields are required");
@@ -43,9 +43,8 @@ const renderLogin = function() {
       method="POST"
       className="mainForm"
     >
-      <label htmlFor="username">Username: </label>
+      <img src="/assets/img/logo-01.png" alt="something"/>
       <input id="user" type="text" name="username" placeholder="username"/>
-      <label htmlFor="pass">Password: </label>
       <input id="pass" type="password" name="pass" placeholder="password"/>
       <input type="hidden" name="_csrf" value={this.props.csrf}/>
       <input className="formSubmit" type="submit" value="Sign in" />
@@ -62,11 +61,9 @@ const renderSignup = function() {
       method="POST"
       className="mainForm"
     >
-      <label htmlFor="username">Username: </label>
+      <img src="/assets/img/logo-01.png" alt="something"/>
       <input id="user" type="text" name="username" placeholder="username"/>
-      <label htmlFor="pass">Password: </label>
       <input id="pass" type="password" name="pass" placeholder="password"/>
-      <label htmlFor="pass2">Password: </label>
       <input id="pass2" type="password" name="pass2" placeholder="retype password"/>
       <input type="hidden" name="_csrf" value={this.props.csrf} />
       <input className="formSubmit" type="submit" value="Sign up" />

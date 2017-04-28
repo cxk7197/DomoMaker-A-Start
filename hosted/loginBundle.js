@@ -3,7 +3,7 @@
 var handleLogin = function handleLogin(e) {
   e.preventDefault();
 
-  $("#domoMessage").animate({ width: 'hide' }, 350);
+  $("#recipeMessage").animate({ width: 'hide' }, 350);
 
   if ($("#user").val() == '' || $("#pass").val() == '') {
     handleError("RAWR! Username or password is empty");
@@ -20,7 +20,7 @@ var handleLogin = function handleLogin(e) {
 var handleSignup = function handleSignup(e) {
   e.preventDefault();
 
-  $("#domoMessage").animate({ width: 'hide' }, 350);
+  $("#recipeMessage").animate({ width: 'hide' }, 350);
 
   if ($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '') {
     handleError("RAWR! All fields are required");
@@ -46,17 +46,8 @@ var renderLogin = function renderLogin() {
       method: "POST",
       className: "mainForm"
     },
-    React.createElement(
-      "label",
-      { htmlFor: "username" },
-      "Username: "
-    ),
+    React.createElement("img", { src: "/assets/img/logo-01.png", alt: "something" }),
     React.createElement("input", { id: "user", type: "text", name: "username", placeholder: "username" }),
-    React.createElement(
-      "label",
-      { htmlFor: "pass" },
-      "Password: "
-    ),
     React.createElement("input", { id: "pass", type: "password", name: "pass", placeholder: "password" }),
     React.createElement("input", { type: "hidden", name: "_csrf", value: this.props.csrf }),
     React.createElement("input", { className: "formSubmit", type: "submit", value: "Sign in" })
@@ -73,23 +64,9 @@ var renderSignup = function renderSignup() {
       method: "POST",
       className: "mainForm"
     },
-    React.createElement(
-      "label",
-      { htmlFor: "username" },
-      "Username: "
-    ),
+    React.createElement("img", { src: "/assets/img/logo-01.png", alt: "something" }),
     React.createElement("input", { id: "user", type: "text", name: "username", placeholder: "username" }),
-    React.createElement(
-      "label",
-      { htmlFor: "pass" },
-      "Password: "
-    ),
     React.createElement("input", { id: "pass", type: "password", name: "pass", placeholder: "password" }),
-    React.createElement(
-      "label",
-      { htmlFor: "pass2" },
-      "Password: "
-    ),
     React.createElement("input", { id: "pass2", type: "password", name: "pass2", placeholder: "retype password" }),
     React.createElement("input", { type: "hidden", name: "_csrf", value: this.props.csrf }),
     React.createElement("input", { className: "formSubmit", type: "submit", value: "Sign up" })
@@ -150,11 +127,11 @@ $(document).ready(function () {
 
 var handleError = function handleError(message) {
     $("#errorMessage").text(message);
-    $("#domoMessage").animate({ width: 'toggle' }, 350);
+    $("#recipeMessage").animate({ width: 'toggle' }, 350);
 };
 
 var redirect = function redirect(response) {
-    $("#domoMessage").animate({ width: 'hide' }, 350);
+    $("#recipeMessage").animate({ width: 'hide' }, 350);
     window.location = response.redirect;
 };
 

@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>DomoMaker</title>
+  <title>Home Recipe</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-dom.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
@@ -10,16 +10,20 @@
   <link rel="shortcut icon" href="/assets/img/favicon.png"/>
   <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
 </head>
-<body>
-  <nav><a href="/login"><img id="logo" src="/assets/img/face.png" alt="face logo"/></a>
-    <div class="navlink"><a href="/logout">Log out</a><a href="/logout">Change password</a></div>
-    <div class=""><a href="/maker">Add +</a></div>
+<body id="addnew">
+  <nav>
+      <a href="/login"><img id="logo" src="/assets/img/hr-01.png" alt="face logo"/></a>
+        <div style="width: 100px;" class="navlink">
+            <a id="logoutButton" href="/logout">LOG OUT</a>
+      </div>
+      <div class="nav-right"><a href="/getAllRecipes">VIEW RECIPES</a></div>
   </nav>
- <section id="makeDomo">
+ <section id="makeRecipe">
   </section>
-  <div id="domoMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
-    <h3><span id="errorMessage"></span></h3><img id="domo" src="assets/img/domo.png" alt="domo"/>
+  <p>hi</p>
+  <div id="recipeMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
+    <h3><span id="errorMessage"></span></h3><img id="recipe" src="assets/img/recipe.png" alt="recipe"/>
   </div>
-  <script src="/assets/bundle.js"></script>
+  <script src="/assets/makeRecipeBundle.js"></script>
 </body>
 </html>

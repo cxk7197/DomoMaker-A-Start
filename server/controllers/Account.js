@@ -31,9 +31,14 @@ const login = (request, response) => {
 
     req.session.account = Account.AccountModel.toAPI(account);
 
-    return res.json({ redirect: '/maker' });
+    return res.json({ redirect: '/getAllRecipes' });
   });
 };
+
+const accountInfo = (req, res) => {
+  res.json({ account: req.session.account });
+};
+
 
 const signup = (request, response) => {
   const req = request;
@@ -79,27 +84,41 @@ const signup = (request, response) => {
   });
 };
 
+const pass = (req, res) => {
+  res.render('passwords', { csrfToken: req.csrfToken(), account: req.session.account });
+};
 
-//const updatePassword = (req, res) => {
-//  const username = `${req.body.username}`;
-//  const password = `${req.body.currentPass}`;
-//
-//
-//  return Account.AccountModel.authenticate(username, password, (err, account) => {
-//    if (err || !account) {
-//      return res.status(401).json({ error: 'Wrong username and/or password' });
-//    }
-//
-//    const passUpdated = account;
-//
-//    return Account.AccountModel.generateHash(req.body.newPass, (salt, hash) => {
-//        passUpdated.password = hash;
-//        passUpdated.salt = salt;
-//
-//        const savePromise = passUpdated.save();
-//    });
-//  });
-//}
+const updatePassword = (req, res) => {
+  const username = `${req.body.username}`;
+  const password = `${req.body.currentPass}`;
+
+  console.dir(username);
+  console.dir(password);
+
+  return Account.AccountModel.authenticate(username, password, (err, account) => {
+    if (err || !account) {
+      return res.status(401).json({ error: 'Wrong username or password' });
+    }
+
+    const updatedAccount = account;
+
+    return Account.AccountModel.generateHash(req.body.newPass, (salt, hash) => {
+      updatedAccount.password = hash;
+      updatedAccount.salt = salt;
+
+      const savePromise = updatedAccount.save();
+
+      savePromise.then(() => res.json({
+        password: updatedAccount.password,
+      }));
+
+      savePromise.catch(saveErr => res.json({ saveErr }));
+
+      return res.json({ redirect: '/login' });
+    });
+  });
+};
+
 
 const getToken = (request, response) => {
   const req = request;
@@ -116,3 +135,7 @@ module.exports.login = login;
 module.exports.logout = logout;
 module.exports.signup = signup;
 module.exports.getToken = getToken;
+module.exports.updatePassword = updatePassword;
+module.exports.pass = pass;
+module.exports.accountInfo = accountInfo;
+

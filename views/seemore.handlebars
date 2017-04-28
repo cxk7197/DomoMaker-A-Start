@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>DomoMaker</title>
+  <title>Home Recipe</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-dom.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
@@ -10,16 +10,33 @@
   <link rel="shortcut icon" href="/assets/img/favicon.png"/>
   <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
 </head>
-<body>
-  <nav><a href="/login"><img id="logo" src="/assets/img/face.png" alt="face logo"/></a>
-    <div class="navlink"><a href="/logout">Log out</a></div>
+<body id="full-recipe">
+  <nav>
+      <img id="logo" src="/assets/img/hr-01.png" alt="HRLogo"/>
+      <div class="navlink">
+          <a class="logoutButton nav-left" href="/logout">LOGOUT</a>
+          <a style="width: 150px;" class="logoutButton nav-right" href="/pass">CHANGE PASSWORD</a>
+      </div>
+        <div class="nav-right">
+            <a href="/getAllRecipes">VIEW RECIPES</a>
+        </div>
   </nav>
-  <section id="seeMore">
-      <h1>Name:{{domo.name}}</h1>
-      <h1>Age:{{domo.age}}</h1>
-      <h1>Height:{{domo.height}}</h1>
+  <section>
+      <div id="seemore-recipe">
+          <h1>Name:{{recipe.name}}</h1>
+          <hr>
+          <p>Ingredients:{{recipe.ingredients}}</p>
+          <hr>
+          <p>Directions:{{recipe.directions}}</p>
+          <hr>
+          <p>Prep Time:{{recipe.prepTime}}</p>
+          <hr>
+          <p>Serving Size:{{recipe.servingSize}}</p>
+          <hr>
+          <p>Recipe Creator:{{recipe.recipeMaker}}</p>
+      </div> 
   </section>
-  <script src="/assets/seeMoreBundle.js"></script>
+ 
 </body>
 </html>
 
