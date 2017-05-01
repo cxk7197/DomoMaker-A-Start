@@ -17,6 +17,9 @@ const router = (app) => {
   app.get('/getAllRecipes', mid.requiresLogin, controllers.Recipe.getAllRecipes);
   app.post('/maker', mid.requiresLogin, controllers.Recipe.make);
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
+  app.get('*', function (req, res){
+    res.render('errorPage', { error: 'The page you are looking for does not exist' });
+  });
 };
 
 module.exports = router;

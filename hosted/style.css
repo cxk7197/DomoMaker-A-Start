@@ -312,17 +312,19 @@ nav:nth-child(1) {
 }
 #recipeMessage {
     display:none;
-    top: 250px;
+    top: 850px;
     width: 250px;
     height: 650px;
     position: absolute;
     z-index: 200;
     right: 0px;
     overflow: hidden;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #recipeMessage h3 {
-    width: 200px;
+    width: 250px;
     position: absolute;
     top: 0px;
     left: 20px;
@@ -335,11 +337,22 @@ nav:nth-child(1) {
 }
 
 #errorMessage {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: red;
-    font-style: italic;
+    font-size: .8em;
+    font-weight: 100;
+    color: lightgray;
+    font-family: sans-serif;
 }
+
+#error{
+    width: 80%;
+    margin: auto;
+    display:block;
+}
+#error img{
+    width: 100%;
+    padding-top: 50px;
+}
+
 
 #recipes {
     width: 100%;
