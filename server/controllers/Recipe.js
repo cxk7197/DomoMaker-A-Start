@@ -36,6 +36,7 @@ const makeRecipe = (req, res) => {
     prepTime: req.body.prepTime,
     servingSize: req.body.servingSize,
     recipeMaker: req.body.recipeMaker,
+    recipeType: req.body.recipeType,
     owner: req.session.account._id,
   };
 

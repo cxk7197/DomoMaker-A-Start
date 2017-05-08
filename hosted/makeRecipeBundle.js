@@ -39,7 +39,8 @@ var renderRecipe = function renderRecipe() {
     React.createElement("textarea", { id: "recipeDirections", type: "text", name: "directions", rows: "6", placeholder: "Directions" }),
     React.createElement("input", { id: "recipePrepTime", type: "text", name: "prepTime", placeholder: "Prep Time In Minutes" }),
     React.createElement("input", { id: "recipeServingSize", type: "text", name: "servingSize", placeholder: "Serving Size" }),
-    React.createElement("input", { id: "recipeRecipeMaker", type: "text", name: "recipeMaker", placeholder: "Recipe Maker" }),
+    React.createElement("input", { id: "recipeMaker", type: "text", name: "recipeMaker", placeholder: "Recipe Maker" }),
+    React.createElement("input", { id: "recipeType", type: "text", name: "recipeType", placeholder: "Recipe Type" }),
     React.createElement("input", { type: "hidden", name: "_csrf", value: this.props.csrf }),
     React.createElement("input", { className: "makeRecipeSubmit", type: "submit", value: "Add Recipe" })
   );

@@ -36,7 +36,8 @@ const renderRecipe = function() {
           <textarea id="recipeDirections" type="text" name="directions" rows="6" placeholder="Directions"></textarea>
           <input id="recipePrepTime" type="text" name="prepTime" placeholder="Prep Time In Minutes"/>
           <input id="recipeServingSize" type="text" name="servingSize" placeholder="Serving Size"/>
-          <input id="recipeRecipeMaker" type="text" name="recipeMaker" placeholder="Recipe Maker"/>
+          <input id="recipeMaker" type="text" name="recipeMaker" placeholder="Recipe Maker"/>
+          <input id="recipeType" type="text" name="recipeType" placeholder="Recipe Type"/>
           <input type="hidden" name="_csrf" value={this.props.csrf} />
           <input className="makeRecipeSubmit" type="submit" value="Add Recipe" />
 

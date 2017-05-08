@@ -47,6 +47,11 @@ const RecipeSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+  recipeType: {
+    type: String,
+    required: true,
+    trim: true,
+  },
 
   owner: {
     type: mongoose.Schema.ObjectId,
@@ -65,7 +70,7 @@ RecipeSchema.statics.findByOwner = (ownerId, callback) => {
     owner: convertId(ownerId),
   };
 
-  return RecipeModel.find(search).select('name ingredients directions prepTime servingSize recipeMaker').exec(callback);
+  return RecipeModel.find(search).select('name ingredients directions prepTime servingSize recipeMaker recipeType').exec(callback);
 };
 
 

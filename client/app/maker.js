@@ -42,6 +42,8 @@ const renderRecipe = function() {
       <input id="recipeServingSize" type="text" name="servingSize" placeholder="Recipe Serving Size"/>
       <label htmlFor="recipeMaker">Recipe Maker: </label>
       <input id="recipeRecipeMaker" type="text" name="recipeMaker" placeholder="Recipe Recipe Maker"/>
+      <label htmlFor="recipeType">Recipe Maker: </label>
+      <input id="recipeRecipeType" type="text" name="recipeType" placeholder="Recipe Recipe Maker"/>
       <input type="hidden" name="_csrf" value={this.props.csrf} />
       <input className="makeRecipeSubmit" type="submit" value="Make Recipe" />
       
