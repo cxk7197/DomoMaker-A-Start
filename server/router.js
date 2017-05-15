@@ -15,6 +15,8 @@ const router = (app) => {
   app.get('/maker', mid.requiresLogin, controllers.Recipe.makerPage);
   app.get('/addNewRecipe', mid.requiresLogin, controllers.Recipe.makerPage);
   app.get('/getAllRecipes', mid.requiresLogin, controllers.Recipe.getAllRecipes);
+  app.get('/premium', mid.requiresLogin, controllers.RecomRecipe.makerPageRecom);
+  app.post('/createRecom', mid.requiresLogin, controllers.RecomRecipe.makeRecipe);
   app.post('/maker', mid.requiresLogin, controllers.Recipe.make);
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
   app.get('*', function (req, res){
