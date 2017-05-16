@@ -36,11 +36,11 @@ const renderRecomRecipe = function() {
           <textarea id="recomIngredients" type="text" name="ingredients" rows="6" placeholder="Ingredients"></textarea>
           <textarea id="recomDirections" type="text" name="directions" rows="6" placeholder="Directions"></textarea>
           <input id="recomPrepTime" type="text" name="prepTime" placeholder="Prep Time In Minutes"/>
-          <input id="recomCookTime" type="text" name="cookTime" placeholder="Prep Time In Minutes"/>
+          <input id="recomCookTime" type="text" name="cookTime" placeholder="Cook Time In Minutes"/>
           <input id="recomServingSize" type="text" name="servingSize" placeholder="Serving Size"/>
           <input id="recomMaker" type="text" name="recipeMaker" placeholder="Recipe Maker"/>
           <input id="recomCategories" type="text" name="categories" placeholder="Category "/>
-          <input id="recomRating" type="text" name="rating" placeholder="Rating"/>
+          <input id="recomRating" type="text" name="rating" placeholder="Rating out of 10"/>
           <input type="hidden" name="_csrf" value={this.props.csrf} />
           <input className="makeRecipeSubmit" type="submit" value="Add Recipe" />
 
