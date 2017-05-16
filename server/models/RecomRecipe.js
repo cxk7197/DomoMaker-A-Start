@@ -57,7 +57,7 @@ const RecomRecipeSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
- rating: {
+  rating: {
     type: Number,
     min: 0,
     required: true,

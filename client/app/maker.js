@@ -64,12 +64,9 @@ const renderRecipeList = function() {
   const recipeNodes = this.state.data.map(function(recipe) {
     return (
       <div key={recipe._id} className="recipe">
-       
         <h1 className="recipeName"> {recipe.name} </h1>
-    
         <p className="recipePrepTime"> Prep Time: {recipe.prepTime} </p>
-        <p className="recipeServingSize"> Serving Size: {recipe.servingSize} </p>
-        
+        <p className="recipeServingSize"> Serving Size: {recipe.servingSize} </p>  
         <a id="seemore" href={'/seeMore/' + recipe._id}>see full recipe</a>
       </div>
     );

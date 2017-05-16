@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Home Recipe</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
+  <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+  <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+</head>
+<body id="full-recipe">
+  <nav>
+    <a href="/getAllRecipes"><img id="logo" src="/assets/img/hr-01.png" alt="face logo"/></a>
+      <div class="navlink">
+          <a class="logoutButton nav-left" href="/logout">LOGOUT</a>
+          <a style="width: 150px;" class="logoutButton nav-right" href="/pass">CHANGE PASSWORD</a>
+      </div>
+        <div class="nav-right">
+            <a href="/getAllRecipes">VIEW RECIPES</a>
+        </div>
+  </nav>
+  <section>
+      <div id="seemore-recipe">
+          <h1>Name:{{recomrecipe.name}}</h1>
+          <hr>
+          <p>Ingredients:{{recomrecipe.ingredients}}</p>
+          <hr>
+          <p>Directions:{{recomrecipe.directions}}</p>
+          <hr>
+          <p>Prep Time:{{recomrecipe.prepTime}}</p>
+          <hr>
+          <p>Cook Time:{{recomrecipe.cookTime}}</p>
+          <hr>
+          <p>Serving Size:{{recomrecipe.servingSize}}</p>
+           <hr>
+          <p>Recipe Maker:{{recomrecipe.recipeMaker}}</p>
+          <hr>
+          <p>Categories:{{recomrecipe.categories}}</p>
+          <hr>
+          <p>Rating:{{recomrecipe.rating}}</p>
+      </div> 
+  </section>
+ 
+</body>
+</html>

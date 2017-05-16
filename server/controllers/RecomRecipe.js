@@ -13,14 +13,14 @@ const makerPageRecom = (req, res) => {
   });
 };
 
-const getAllRecipes = (req, res) => {
+const getAllRecom = (req, res) => {
   RecomRecipe.RecomRecipeModel.findByOwner(req.session.account._id, (err, docs) => {
     if (err) {
       console.log(err);
       return res.status(400).json({ error: 'An error occured' });
     }
 
-    return res.render('allrecipes', { csrfToken: req.csrfToken(), recipes: docs });
+    return res.render('recommended', { csrfToken: req.csrfToken(), recipes: docs });
   });
 };
 
@@ -42,13 +42,13 @@ const makeRecipe = (req, res) => {
     owner: req.session.account._id,
   };
 
-  const newRecipe = new Recipe.RecipeModel(recipeData);
+  const newRecomRecipe = new RecomRecipe.RecomRecipeModel(recipeData);
 
-  const recipePromise = newRecipe.save();
+  const recipePromise = newRecomRecipe.save();
 
-  recipePromise.then(() => res.json({ redirect: '/maker' }));
+  recomRecipePromise.then(() => res.json({ redirect: '/getAllRecom' }));
 
-  recipePromise.catch((err) => {
+  recomRecipePromise.catch((err) => {
     console.log(err);
     if (err.code === 11000) {
       return res.status(400).json({ error: 'Recipe already exists' });
@@ -57,10 +57,10 @@ const makeRecipe = (req, res) => {
     return res.status(400).json({ error: 'An error occurred' });
   });
 
-  return recipePromise;
+  return recomRecipePromise;
 };
 
-const getRecipes = (request, response) => {
+const getRecomRecipes = (request, response) => {
   const req = request;
   const res = response;
 
@@ -74,20 +74,20 @@ const getRecipes = (request, response) => {
   });
 };
 
-const getMoreRecipe = (request, response) => {
-  RecomRecipe.RecomRecipeModel.findById(request.params.recipeid, (err, docs) => {
+const getMoreRecomRecipe = (request, response) => {
+  RecomRecipe.RecomRecipeModel.findById(request.params.recomrecipeid, (err, docs) => {
     if (err) {
       console.log(err);
       return response.status(400).json({ error: 'An error occured' });
     }
 
-    return response.render('seemore', { csrfToken: request.csrfToken(), recipe: docs });
+    return response.render('seemorerecom', { csrfToken: request.csrfToken(), recomrecipe: docs });
   });
 };
 
 
 module.exports.makerPageRecom = makerPageRecom;
-module.exports.getAllRecipes = getAllRecipes;
-module.exports.getRecipes = getRecipes;
+module.exports.getAllRecom = getAllRecom;
+module.exports.getRecomRecipes = getRecomRecipes;
 module.exports.makeRecipe = makeRecipe;
-module.exports.getMoreRecipe = getMoreRecipe;
+module.exports.getMoreRecomRecipe = getMoreRecomRecipe;
