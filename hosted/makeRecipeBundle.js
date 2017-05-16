@@ -42,12 +42,7 @@ var renderRecipe = function renderRecipe() {
     React.createElement("input", { id: "recipeMaker", type: "text", name: "recipeMaker", placeholder: "Recipe Maker" }),
     React.createElement("input", { id: "recipeType", type: "text", name: "recipeType", placeholder: "Recipe Type" }),
     React.createElement("input", { type: "hidden", name: "_csrf", value: this.props.csrf }),
-    React.createElement("input", { className: "makeRecipeSubmit", type: "submit", value: "Add Recipe" }),
-    React.createElement(
-      "p",
-      null,
-      "HIEEEEE"
-    )
+    React.createElement("input", { className: "makeRecipeSubmit", type: "submit", value: "Add Recipe" })
   );
 };
 

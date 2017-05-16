@@ -28,7 +28,13 @@ a {
     display:block;
     float: left;
 }
-
+#recomz{
+    margin:auto;
+    width: 45%;
+}
+#recomz img{
+    width: 100%;
+}
 .nav-right{
     display:block;
     float:right;
@@ -48,29 +54,29 @@ nav {
     float: right;
     padding: 5px;
     padding-top: 17px;
-    padding-left: 20px;
-    font-size: 1em;
+    padding-left: 0px;
+    font-size: .8em;
 }
 .nav-right a {
     text-decoration: none;
     font-weight: 100;
     font-size: .8em;
 }
-nav:nth-child(1) {
-    padding-left: 25px;
-}
 
 .navlink {
-    width: 250px;
+    width: 220px;
     padding: 5px;
     padding-top: 12px;
     padding-left: 20px;
     color: white;
-    font-size: 1em;
+    font-size: .8em;
     float: left;
 }
 
-.navlink a, .navlink a:link, .navlink a:visited, .navlink a:hover, .navlink a:active {
+.nav-right a:active{
+    color: gray;
+}
+.navlink a, .navlink a:link, .navlink a:visited, .navlink a:hover {
     color: white;
     text-decoration: none;
     padding: 5px;

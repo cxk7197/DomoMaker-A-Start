@@ -40,7 +40,6 @@ const renderRecipe = function() {
           <input id="recipeType" type="text" name="recipeType" placeholder="Recipe Type"/>
           <input type="hidden" name="_csrf" value={this.props.csrf} />
           <input className="makeRecipeSubmit" type="submit" value="Add Recipe" />
-<p>HIEEEEE</p>
         </form>
   );
 };

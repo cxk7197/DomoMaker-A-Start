@@ -11,16 +11,19 @@
   <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
 </head>
 <body id="addnew">
-  <nav>
-      <a href="/login"><img id="logo" src="/assets/img/hr-01.png" alt="face logo"/></a>
-        <div style="width: 100px;" class="navlink">
-            <a id="logoutButton" href="/logout">LOG OUT</a>
+     <nav><a href="/login">
+      <img id="logo" src="/assets/img/hr-01.png" alt="HRLogo"/></a>
+      <div class="navlink">
+          <a class="logoutButton nav-left" href="/logout">LOGOUT</a>
       </div>
-      <div class="nav-right"><a href="/getAllRecipes">VIEW RECIPES</a></div>
+     
+      <div class="nav-right"><a href="/getAllRecom">TOP RECIPES</a></div>
+      <div class="nav-right"><a href="/getAllRecipes">YOUR RECIPES</a></div>
+      <div class="nav-right"><a href="/premium">SUBMIT RECIPES</a></div> 
   </nav>
  <section id="makeRecipe">
   </section>
-  <p>hi</p>
+
   <div id="recipeMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
     <h3><span id="errorMessage"></span></h3><img id="recipe" src="assets/img/recipe.png" alt="recipe"/>
   </div>

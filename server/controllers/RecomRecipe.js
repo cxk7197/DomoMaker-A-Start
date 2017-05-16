@@ -44,7 +44,7 @@ const makeRecipe = (req, res) => {
 
   const newRecomRecipe = new RecomRecipe.RecomRecipeModel(recipeData);
 
-  const recipePromise = newRecomRecipe.save();
+  const recomRecipePromise = newRecomRecipe.save();
 
   recomRecipePromise.then(() => res.json({ redirect: '/getAllRecom' }));
 
